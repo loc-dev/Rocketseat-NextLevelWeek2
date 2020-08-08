@@ -34,8 +34,9 @@
     box-sizing: border-box;
 }
 
-#container {
-    width: 100px;
-    border: 1px solid red;
-    padding-left: 50px;
+body {
+    background: var(--color-background);
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
