@@ -57,3 +57,8 @@ textarea {
     font-size: 1.6rem;
     color: var(--color-text-base);
 }
+
+#container {
+    width: 90vw; /* Width = Largura */
+    max-width: 700px;
+}
