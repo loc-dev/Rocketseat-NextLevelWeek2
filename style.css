@@ -34,9 +34,26 @@
     box-sizing: border-box;
 }
 
+html,
 body {
+    height: 100vh; /* Height = Altura*/
+}
+
+body {
+    height: 100vh;
     background: var(--color-background);
     display: flex;
     align-items: center;
     justify-content: center;
+}
+
+body,
+input,
+button,
+textarea {
+    /* font: 500 1.6rem Poppins; */
+    font-weight: 500;
+    font-family: Poppins;
+    font-size: 1.6rem;
+    color: var(--color-text-base);
 }
