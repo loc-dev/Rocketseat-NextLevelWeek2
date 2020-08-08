@@ -25,18 +25,21 @@
     --color-small-info: #C1BCCC;
 
     /* Tamanho da Fonte Padrão: 16 px - 100% - 1rem */
-    font-size: 50%; /* controle das medidas rem */
+    font-size: 60%; /* controle das medidas rem */
 }
 
-body {
-    background-color: var(--color-background);
-    font-size: 100%;
-}
+/* * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+} */
 
-h1 {
-    font-size: 3em;
-}
+#container {
+    /* Box Model */
+    border: 1px solid red;
+    padding: 40px;
+    margin: 60px;
 
-h1 span {
-    font-size: 0.2rem;
+    width: 300px;
+    height: 300px;
 }
