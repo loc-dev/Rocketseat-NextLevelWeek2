@@ -1,3 +1,6 @@
+// Dicas 
+// () = > {} : Função curta
+
 // Servidor Dependencies Express
 
 // Pegando os dados de maneira dinâmica do arquivo study.html
@@ -26,21 +29,29 @@ const proffys = [
     }
 ]
 
+// Funcionalidades para recarregamento das páginas em HTML
+
+function pageLanding(req,res) {
+    return res.sendFile(__dirname + "/views/index.html")
+}
+
+function pageStudy(req,res) {
+    return res.sendFile(__dirname + "/views/study.html")
+}
+
+function pageGiveClasses(req, res) {
+    return res.sendFile(__dirname + "/views/give-classes.html")
+}
+
 // Variável constante 'express' com a função Express
 const express = require('express') 
 // Variável constante 'server' que executa a função Express
 const server = express()
 
-server.use(express.static("public"))        // .use : Configuração do nosso servidor
-
-.get("/", (req, res) => {                   // () = > {} : Função curta
-    return res.sendFile(__dirname + "/views/index.html")
-})
-.get("/study", (req, res) => {
-    return res.sendFile(__dirname + "/views/study.html")
-})
-.get("/give-classes", (req, res) => {
-    return res.sendFile(__dirname + "/views/give-classes.html")
-})
-
+// Configuração do nosso servidor
+server
+.use(express.static("public"))
+.get("/", pageLanding)
+.get("/study", pageStudy)
+.get("/give-classes", pageGiveClasses)
 .listen(5500)
