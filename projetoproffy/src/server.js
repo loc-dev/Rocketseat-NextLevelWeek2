@@ -48,9 +48,22 @@ const express = require('express')
 // Variável constante 'server' que executa a função Express
 const server = express()
 
+// Configuração do Nunjucks (Template Engine)
+const nunjucks = require('nunjucks')
+
+// 1º coisa onde está a pasta dos meus HTMLs
+// 2º Enviar os objetos com algumas opções
+nunjucks.configure('src/views', {
+    express: server,
+    noCache: true,
+})
+
+
 // Configuração do nosso servidor
 server
+// Configuração dos arquivos estáticos (css, imagens, scripts)
 .use(express.static("public"))
+// Rotas da aplicação 
 .get("/", pageLanding)
 .get("/study", pageStudy)
 .get("/give-classes", pageGiveClasses)
