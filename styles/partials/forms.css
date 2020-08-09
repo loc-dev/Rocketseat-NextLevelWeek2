@@ -5,8 +5,8 @@
     color: var(--color-text-complement);
 }
 
-.select-block select,
 .input-block input,
+.select-block select,
 .textarea-block textarea {
     width: 100%;
     height: 5.6rem;
