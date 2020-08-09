@@ -36,7 +36,7 @@ function pageLanding(req, res) {
 }
 
 function pageStudy(req, res) {
-    return res.render("study.html")
+    return res.render("study.html", { proffys })
 }
 
 function pageGiveClasses(req, res) {
