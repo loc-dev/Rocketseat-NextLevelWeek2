@@ -66,7 +66,20 @@ function pageStudy(req, res) {
 }
 
 function pageGiveClasses(req, res) {
-    return res.render("give-classes.html")
+    const data = req.query
+
+    // Se tiver dados :
+    const isNotEmpty = Object.keys(data).length > 0
+    if (isNotEmpty) {
+        // Adicionar dados a Lista de Proffys
+        proffys.push(data)
+
+        return res.redirect("/study")
+    }
+    
+    // Senão :
+    // Não adicionar e mostrar a página
+    return res.render("give-classes.html", { subjects, weekdays })
 }
 
 // Variável constante 'express' com a função Express
