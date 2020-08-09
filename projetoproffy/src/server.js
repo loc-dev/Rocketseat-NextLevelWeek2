@@ -55,6 +55,11 @@ const weekdays = [
 
 // Funcionalidades para recarregamento das páginas em HTML
 
+function getSubject(subjectNumber) {
+    const position = +subjectNumber - 1
+    return subjects[position]
+}
+
 function pageLanding(req, res) {
     return res.render("index.html")
 }
@@ -71,6 +76,9 @@ function pageGiveClasses(req, res) {
     // Se tiver dados :
     const isNotEmpty = Object.keys(data).length > 0
     if (isNotEmpty) {
+
+        data.subject = getSubject(data.subject)
+
         // Adicionar dados a Lista de Proffys
         proffys.push(data)
 
