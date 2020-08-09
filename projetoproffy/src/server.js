@@ -31,11 +31,11 @@ const proffys = [
 
 // Funcionalidades para recarregamento das páginas em HTML
 
-function pageLanding(req,res) {
+function pageLanding(req, res) {
     return res.sendFile(__dirname + "/views/index.html")
 }
 
-function pageStudy(req,res) {
+function pageStudy(req, res) {
     return res.sendFile(__dirname + "/views/study.html")
 }
 
