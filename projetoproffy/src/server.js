@@ -3,6 +3,7 @@
 
 // Servidor Dependencies Express
 
+// Dados
 // Pegando os dados de maneira dinâmica do arquivo study.html
 const proffys = [
     { 
@@ -29,6 +30,29 @@ const proffys = [
     }
 ]
 
+const subjects = [    
+    "Artes",
+    "Biologia",
+    "Ciências",
+    "Educação Física",
+    "Física",
+    "Geografia",
+    "História",
+    "Matemática",
+    "Português",
+    "Química",
+]
+
+const weekdays = [    
+    "Domingo",
+    "Segunda-feira",
+    "Terça-feira",
+    "Quarta-feira",
+    "Quinta-feira",
+    "Sexta-feira",
+    "Sábado",
+]
+
 // Funcionalidades para recarregamento das páginas em HTML
 
 function pageLanding(req, res) {
@@ -36,7 +60,9 @@ function pageLanding(req, res) {
 }
 
 function pageStudy(req, res) {
-    return res.render("study.html", { proffys })
+    // Receber os dados e mandar de volta
+    const filters = req.query
+    return res.render("study.html", { proffys, filters, subjects, weekdays })
 }
 
 function pageGiveClasses(req, res) {
@@ -67,4 +93,5 @@ server
 .get("/", pageLanding)
 .get("/study", pageStudy)
 .get("/give-classes", pageGiveClasses)
+// Start do Servidor
 .listen(5500)
