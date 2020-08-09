@@ -32,15 +32,15 @@ const proffys = [
 // Funcionalidades para recarregamento das páginas em HTML
 
 function pageLanding(req, res) {
-    return res.sendFile(__dirname + "/views/index.html")
+    return res.render("index.html")
 }
 
 function pageStudy(req, res) {
-    return res.sendFile(__dirname + "/views/study.html")
+    return res.render("study.html")
 }
 
 function pageGiveClasses(req, res) {
-    return res.sendFile(__dirname + "/views/give-classes.html")
+    return res.render("give-classes.html")
 }
 
 // Variável constante 'express' com a função Express
