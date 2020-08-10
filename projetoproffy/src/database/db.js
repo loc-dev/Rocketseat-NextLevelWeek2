@@ -1,9 +1,10 @@
+// Importando o módulo
 const Database = require('sqlite-async')
-Database.open(__dirname + '/database.sqlite').then(execute)
 
+// Registrando na memória
 function execute(db) {
     // Criar as tabelas do banco de dados
-    db.exec(`
+    return db.exec(`
         CREATE TABLE IF NOT EXISTS proffys (
             id INTEGER PRIMARY KEY AUTOINCREMENT,
             name TEXT,
@@ -28,3 +29,6 @@ function execute(db) {
         );
     `)
 }
+
+// Executando
+module.exports = Database.open(__dirname + '/database.sqlite').then(execute)
