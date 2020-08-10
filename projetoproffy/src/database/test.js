@@ -1,11 +1,12 @@
 // Pegando o exports
 const Database = require('./db')
+const createProffy = require('./createProffy')
 
-Database.then((db) => {
+Database.then(async (db) => {
     // Inserir dados
 
     // Tabela proffys
-    proffy = {
+    proffyValue = {
         name: "Mayk Brito",
         avatar: "https://avatars2.githubusercontent.com/u/6643122?s=400&u=1e9e1f04b76fb5374e6a041f5e41dce83f3b5d92&v=4",
         whatsapp: "8998877665",
@@ -20,7 +21,7 @@ Database.then((db) => {
     }
 
     // Tabela class_schedule
-    classSchedule = [
+    classScheduleValues = [
         {
             // O class_id virá pelo banco de dados, após cadastramos a class
             weekday: 1,
@@ -33,6 +34,9 @@ Database.then((db) => {
             time_to: 1140 // Em minutos
         }
     ]
+
+    // Com todos os dados
+    await createProffy(db, {proffyValue, classValue, classScheduleValues})
 
     // Consultar os dados inseridos
 })
