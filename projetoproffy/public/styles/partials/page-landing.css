@@ -88,10 +88,14 @@
 
 /* Adicionando uma regra para padrões de telas até 699px */
 
-@media (max-width: 699px) {
+@media (max-width: 1100px) {
     :root {
         font-size: 40%; /* controle das medidas rem */
-    }    
+    }
+    
+    .hero-image {
+        height: 45rem;
+    }
 }
 
 /* Adicionando uma regra para padrões de telas acima de 1100px */
